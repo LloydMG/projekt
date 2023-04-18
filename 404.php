@@ -15,7 +15,7 @@ include_once('functions.php');
     printNavbar();
     ?>
     <main class="container mt-5">
-        <h2>404 - Nie znaleziono</h2>
+        <h2>Error 404 - Nie znaleziono</h2>
     </main>
     <script src="js/bootstrap/bootstrap.min.js"></script>
 </body>
