@@ -33,7 +33,7 @@ function getPost($id) {
     return $rows[0];
 }
 
-function getPosts(){
+function addPost(){
     $values= ['title','categoryId','content'];
     if(!isPostValid($values)) return;
     $categoryId = $_POST['categoryId'];
@@ -54,10 +54,6 @@ function getAllCategories() {
     $rows = $result->fetch_all(MYSQLI_ASSOC);
     $connection->close();
     return $rows;
-}
-
-function addPost(){
-    //tutaj dobrą funkcję dodaj
 }
 
 function addMessage(){

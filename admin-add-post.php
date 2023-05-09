@@ -2,6 +2,7 @@
 include_once('functions.php');
 include_once('database.php');
 $categories = getAllCategories();
+addPost();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
