@@ -14,6 +14,7 @@ function printNavbar() {
             <li class="nav-item">
             <a class="nav-link" aria-current="page" href="index.php">Strona Główna</a></li>
             <a class="nav-link" aria-current="page" href="posts.php">Posty</a></li>
+            <a class="nav-link" aria-current="page" href="contact.php">Kontakt</a></li>
             <a class="nav-link" aria-current="page" href="admin-posts.php">Zarządzanie-Posty</a></li>
         </ul>
         </div>
@@ -25,7 +26,7 @@ function printFormField($name, $displayName, $type){
     ?>
     <div class="form-group">
         <label class="form-label" for="<?=$name?>"><?=$displayName?></label>
-        <input class="form-control" type="<?=type?>" name="<?=$name?>" id="<?=$name?>">
+        <input class="form-control" type="<?=$type?>" name="<?=$name?>" id="<?=$name?>">
     </div>
     <?php
 }
@@ -40,7 +41,7 @@ function printTextarea($name, $displayName){
 function printSelect($name, $displayName, $array){
     ?>
     <div class="form-group">
-        <label for="<?=$name?>" class="form-control"><?=$displayName?></label>
+        <label for="<?=$name?>" class="form-label"><?=$displayName?></label>
         <select class="form-control" name="<?=$name?>" id="<?=$name?>">
             <?php
             foreach($array as $option) {

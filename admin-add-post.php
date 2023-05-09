@@ -1,6 +1,7 @@
 <?php
 include_once('functions.php');
 include_once('database.php');
+$categories = getAllCategories();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -16,7 +17,13 @@ include_once('database.php');
     printNavbar();
     ?>
     <main class="container mt-5">
-        <h2>Strona Główna</h2>
+        <h2>Nowy post</h2>
+        <form method="post">
+            <?=printFormField('title','Tytuł','text')?>
+            <?=printSelect('categoryId','Kategoria',$categories)?>
+            <?=printTextarea('content','Treść')?>
+            <input type="submit" class="btn btn-outline-primary" value="Dodaj!">
+        </form>
     </main>
     <script src="js/bootstrap/bootstrap.min.js"></script>
 </body>
