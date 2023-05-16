@@ -1,9 +1,11 @@
 <?php
 include_once('functions.php');
-checkIfAdmin();
 include_once('database.php');
-$categories = getAllCategories();
-addPost();
+login();
+if(isAdmin()){
+    header('Location: admin-posts.php');
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -19,12 +21,11 @@ addPost();
     printNavbar();
     ?>
     <main class="container mt-5">
-        <h2>Nowy post</h2>
+        <h2>Logowanie</h2>
         <form method="post">
-            <?=printFormField('title','Tytuł','text')?>
-            <?=printSelect('categoryId','Kategoria',$categories)?>
-            <?=printTextarea('content','Treść')?>
-            <input type="submit" class="btn btn-outline-primary" value="Dodaj!">
+            <?=printFormField('email','E-mail','email')?>
+            <?=printFormField('password','Hasło','password')?>
+            <input class="btn btn-outline-primary" type="submit" value="Zaloguj">
         </form>
     </main>
     <script src="js/bootstrap/bootstrap.min.js"></script>

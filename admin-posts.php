@@ -1,5 +1,6 @@
 <?php
 include_once('functions.php');
+checkIfAdmin();
 include_once('database.php');
 ?>
 <!DOCTYPE html>

@@ -1,4 +1,5 @@
 <?php
+include_once('functions.php');
 include_once('config.php');
 
 function getConnection() {
@@ -37,7 +38,7 @@ function addPost(){
     $values= ['title','categoryId','content'];
     if(!isPostValid($values)) return;
     $categoryId = $_POST['categoryId'];
-    $authorId = 1;
+    $authorId = $_SESSION['adminId'];
     $title = $_POST['title'];
     $content = $_POST['content'];
     $connection = getConnection();
@@ -68,4 +69,19 @@ function addMessage(){
     $connection->query($sql);
     $connection->close();
     header('Location: contact.php?succeeded=1');
+}
+
+function login(){
+    $values = ['email','password'];
+    if(!isPostValid($values)) return;
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $connection = getConnection();
+    $sql = "select * from admins where email='$email'";
+    $result = $connection->query($sql);
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+    $connection->close();
+    if(count($rows) == 0) return;
+    if(!password_verify($password,$rows[0]['password'])) return;
+    $_SESSION['adminId'] = $rows[0]['id'];
 }
