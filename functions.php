@@ -4,7 +4,7 @@ session_start();
 function printNavbar() {
     global $nrSpotkania, $title;
     ?>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
         <a class="navbar-brand" href="index.php"><?=$title?></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
@@ -22,6 +22,7 @@ function printNavbar() {
             ?>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" href="admin-posts.php">Zarządzanie - Posty</a></li>
+                <li class="nav-item"><a class="nav-link" href="admin-messages.php">Zarządzanie - Wiadomości</a></li>
                 <li class="nav-item"><a class="nav-link" href="logout.php">Wyloguj</a></li>
             </ul>
             <?php

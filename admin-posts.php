@@ -1,7 +1,7 @@
 <?php
 include_once('functions.php');
-checkIfAdmin();
 include_once('database.php');
+checkIfAdmin();
 ?>
 <!DOCTYPE html>
 <html lang="pl">
@@ -11,6 +11,7 @@ include_once('database.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=$title?></title>
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
     <?php
@@ -41,8 +42,8 @@ include_once('database.php');
                         <td><?=$a['id']?></td>
                         <td><?=$a['title']?></td>
                         <td><?=$a['categoryName']?></td>
-                        <td><i class="bi bi-link"></i></td>
-                        <td><i class="bi bi-trash"></i></td>
+                        <td><a class="btn btn-outline-info" href="admin-post.php?id=<?=$a['id']?>" ><i class="bi bi-link"></i></a></td>
+                        <td><a class="btn btn-outline-danger" href="admin-delete-post.php?id=<?=$a['id']?>"><i class="bi bi-trash"></i></a></td>
                     </tr>
                     <?php
                 }
