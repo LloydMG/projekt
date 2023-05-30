@@ -26,6 +26,12 @@ function printNavbar() {
                 <li class="nav-item"><a class="nav-link" href="logout.php">Wyloguj</a></li>
             </ul>
             <?php
+        } else {
+            ?>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="login.php">Logowanie</a></li>
+            </ul>
+            <?php
         }
         ?>
         </div>
